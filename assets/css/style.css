@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Waltograph';
+    src: url('waltograph42-webfont.woff2') format('woff2'),
+         url('waltograph42-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-image: url('../images/disney3.jpg');
+    background-repeat: repeat;
+}
+
+.content {
+    font-family: 'Waltograph';
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+    background: white;
+    border: 2px dashed lightgray;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+h1 {
+    font-family: 'Waltograph';
+    font-size: 60px;
+    text-align: center;
+    margin: 25px 0;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {   
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Mali', cursive; 
+}
+
+.disney-image {
+    width: 210px;
+    height: 210px;
+}
+
+#numberGuess { 
+    font-size: 30px;
+}
+
+.column {
+    float: left;
+    width: 450px;
+    height: 200px;
+}
+.row:after {
+    content: "";
+    clear: both;
+}
