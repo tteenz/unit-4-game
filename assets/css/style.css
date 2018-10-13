@@ -4,6 +4,7 @@
          url('waltograph42-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+
 }
 
 body {
@@ -29,7 +30,10 @@ h1 {
 }
 
 h2 {
+    font-family: 'Waltograph';
     font-size: 30px;
+    padding-top: 10px;
+    padding-left: 5px;
 }
 
 p {   
@@ -38,19 +42,29 @@ p {
 }
 
 .disney-image {
-    width: 210px;
-    height: 210px;
+    margin-top: 20px;
+    width: 221px;
+    height: 250px;
 }
 
-#numberGuess { 
-    font-size: 30px;
+#numberGuess, #numberWins, #numberLosses { 
+    font-size: 50px;
+    padding-left: 50px;
 }
 
 .column {
     float: left;
-    width: 450px;
+    width: 295px;
     height: 200px;
+
 }
+
+#column1 {
+    border-left: 2px dashed lightgray;
+    border-right: 2px dashed lightgray;
+}
+
+
 .row:after {
     content: "";
     clear: both;

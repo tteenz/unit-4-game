@@ -45,29 +45,44 @@
     </div>
 
     <div class="content">
-        <div class="row">
-            <div class="column">
-                <h2>Number to Guess: <span id="numberGuess"></span></h2>
-            </div>
-            <div class="column">
-<p>Win: </p>
-<p>Loss: </p>
-            </div>
-        </div>
-        <!-- Note that this div is now empty. We will fill it dynamically -->
-        <div id="disney">
-        </div>
+
+        <!-- First row with three column -->
 
         <div class="row">
-            <img src="assets/images/mickey.jpg" class="disney-image">
-            <img src="assets/images/baymax.jpg" class="disney-image">
-            <img src="assets/images/stitch2.jpg" class="disney-image">
-            <img src="assets/images/jack.jpg" class="disney-image">
+            <div class="column">
+                <h2>Number to Guess:
+                    <br><br>
+                    <span id="numberGuess"></span></h2>
+                <div id="disney">
+                </div>
+            </div>
+
+            <div class="column" id="column1">
+                <h2>Win:  <span id="numWins"></span></h2>
+                <br>
+                <h2>Loss:  <span id="numLosses"></span></h2>
+            </div>
+
+            <div class="column">
+                <h2>Total Score: 
+                <Br><br>
+                    <span id="totalScore"></span></h2>
+            </div>
+        </div>
+       
+        <!-- Second row with images -->
+
+        <div class="row">
+            <img src="assets/images/mickey.jpg" class="disney-image" id="mickey">
+            <img src="assets/images/baymax.jpg" class="disney-image" id="baymax">
+            <img src="assets/images/stitch2.jpg" class="disney-image" id="stitch">
+            <img src="assets/images/jack.jpg" class="disney-image" id="jack">
 
 
         </div>
     </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 

@@ -1,60 +1,95 @@
-var targetNumber = Math.floor((Math.random() * 50) + 1);
+var targetNumber = Math.floor((Math.random() * 90) + 10);
+$("#numberGuess").text(targetNumber);
 
+var counter = 0;
+var wins = 0;
+var losses  = 0;
 
+$('#counter').text(totalScore);
+$('#numWins').text(wins);
+$('#numLosses').text(losses);
 
-  $("#numberGuess").text(targetNumber);
+// Value of Disney character
+var firstNum = Math.floor(Math.random() * 11+1);
+var secNum = Math.floor(Math.random() * 11+1);
+var thirdNum = Math.floor(Math.random() * 11+1);
+var fourthNum = Math.floor(Math.random() * 11+1);
 
-  var counter = 0;
+// Resets the game
+function reset() {
+    targetNumber = Math.floor((Math.random() * 90) + 10);
+    console.log(targetNumber)
+    $("#numberGuess").text(targetNumber);
+    var firstNum = Math.floor(Math.random() * 11+1);
+    var secNum = Math.floor(Math.random() * 11+1);
+    var thirdNum = Math.floor(Math.random() * 11+1);
+    var fourthNum = Math.floor(Math.random() * 11+1);    
+    counter = 0;
+    $('#totalScore').text(counter);
+}
 
-  // Now for the hard part. Creating multiple crystals each with their own unique number value.
+function winner(){
+    alert("You won!");
+    wins++;
+    $('#numWins').text(wins);
+    reset();
+}
 
-  // We begin by expanding our array to include four options.
-  var numberOptions = [9, 1, 5, 8];
+function loser() {
+    alert ("You lose!)");
+    losses++;
+    $('#numLosses').text(losses);
+    reset()
+}
 
-  // Next we create a for loop to create crystals for every numberOption.
-  for (var i = 0; i < numberOptions.length; i++) {
+$('#mickey').on('click', function(){
+    counter = counter + firstNum;
+    console.log("New counter=" + counter);
+    $('#totalScore').text(counter);
 
-    // For each iteration, we will create an imageCrystal
-    var imageDisney = $("disney-image");
+        if (counter == targetNumber){
+            winner();
+        }
+        else if (counter > targetNumber){
+            loser();
+        }
+})
 
-    // First each crystal will be given the class ".crystal-image".
-    // This will allow the CSS to take effect.
-    imageDisney.addClass("disney-image");
+$('#baymax').on('click', function(){
+    counter = counter + secNum;
+    console.log("New counter=" + counter);
+    $('#totalScore').text(counter);
 
-    // Each imageCrystal will be given a src link to the crystal image
-    imageDisney.attr("src", "disney-image");
+        if (counter == targetNumber){
+            winner();
+        }
+        else if (counter > targetNumber){
+            loser();
+        }
+})
 
-    // Each imageCrystal will be given a data attribute called data-crystalValue.
-    // This data attribute will be set equal to the array value.
-    imageDisney.attr("data-disneyvalue", numberOptions[i]);
+$('#stitch').on('click', function(){
+    counter = counter + thirdNum;
+    console.log("New counter=" + counter);
+    $('#totalScore').text(counter);
 
-    // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-    $("#disney").append(imageDisney);
-  }
+        if (counter == targetNumber){
+            winner();
+        }
+        else if (counter > targetNumber){
+            loser();
+        }
+})
 
-  // This time, our click event applies to every single character on the page. Not just one.
-  $(".disney-image").on("click", function() {
+$('#jack').on('click', function(){
+    counter = counter + fourthNum;
+    console.log("New counter=" + counter);
+    $('#totalScore').text(counter);
 
-    // Determining the crystal's value requires us to extract the value from the data attribute.
-    // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-    // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-    // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
-
-    var disneyValue = ($(this).attr("data-disneyvalue"));
-    disneyValue = parseInt(disneyValue);
-    // We then add the crystalValue to the user's "counter" which is a global variable.
-    // Every click, from every crystal adds to the global counter.
-    counter += disneyValue;
-
-    // All of the same game win-lose logic applies. So the rest remains unchanged.
-    alert("New score: " + counter);
-
-    if (counter === targetNumber) {
-      alert("You win!");
-    }
-
-    else if (counter >= targetNumber) {
-      alert("You lose!!");
-    }
-
-  });
+        if (counter == targetNumber){
+            winner();
+        }
+        else if (counter > targetNumber){
+            loser();
+        }
+});
