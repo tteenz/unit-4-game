@@ -17,7 +17,7 @@ var fourthNum = Math.floor(Math.random() * 11+1);
 
 // Resets the game
 function reset() {
-    targetNumber = Math.floor((Math.random() * 90) + 10);
+    targetNumber = Math.floor((Math.random() * 101) + 19);
     $("#numberGuess").text(targetNumber);
     var firstNum = Math.floor(Math.random() * 11+1);
     var secNum = Math.floor(Math.random() * 11+1);
