@@ -35,7 +35,7 @@ function winner(){
 }
 
 function loser() {
-    alert ("You lose!)");
+    alert ("You lose!");
     losses++;
     $('#numLosses').text(losses);
     reset()
