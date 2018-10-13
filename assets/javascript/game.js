@@ -19,10 +19,10 @@ var fourthNum = Math.floor(Math.random() * 11+1);
 function reset() {
     targetNumber = Math.floor((Math.random() * 101) + 19);
     $("#numberGuess").text(targetNumber);
-    var firstNum = Math.floor(Math.random() * 11+1);
-    var secNum = Math.floor(Math.random() * 11+1);
-    var thirdNum = Math.floor(Math.random() * 11+1);
-    var fourthNum = Math.floor(Math.random() * 11+1);    
+    firstNum = Math.floor(Math.random() * 11+1);
+    secNum = Math.floor(Math.random() * 11+1);
+    thirdNum = Math.floor(Math.random() * 11+1);
+    fourthNum = Math.floor(Math.random() * 11+1);    
     counter = 0;
     $('#totalScore').text(counter);
 }
