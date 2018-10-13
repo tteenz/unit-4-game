@@ -1,4 +1,4 @@
-var targetNumber = Math.floor((Math.random() * 90) + 10);
+var targetNumber = Math.floor((Math.random() * 101) + 19);
 $("#numberGuess").text(targetNumber);
 
 var counter = 0;
@@ -18,7 +18,6 @@ var fourthNum = Math.floor(Math.random() * 11+1);
 // Resets the game
 function reset() {
     targetNumber = Math.floor((Math.random() * 90) + 10);
-    console.log(targetNumber)
     $("#numberGuess").text(targetNumber);
     var firstNum = Math.floor(Math.random() * 11+1);
     var secNum = Math.floor(Math.random() * 11+1);
@@ -44,7 +43,7 @@ function loser() {
 
 $('#mickey').on('click', function(){
     counter = counter + firstNum;
-    console.log("New counter=" + counter);
+    // console.log("Total=" + counter);
     $('#totalScore').text(counter);
 
         if (counter == targetNumber){
@@ -57,7 +56,7 @@ $('#mickey').on('click', function(){
 
 $('#baymax').on('click', function(){
     counter = counter + secNum;
-    console.log("New counter=" + counter);
+    // console.log("Total=" + counter);
     $('#totalScore').text(counter);
 
         if (counter == targetNumber){
@@ -70,7 +69,7 @@ $('#baymax').on('click', function(){
 
 $('#stitch').on('click', function(){
     counter = counter + thirdNum;
-    console.log("New counter=" + counter);
+    // console.log("Total=" + counter);
     $('#totalScore').text(counter);
 
         if (counter == targetNumber){
@@ -83,7 +82,7 @@ $('#stitch').on('click', function(){
 
 $('#jack').on('click', function(){
     counter = counter + fourthNum;
-    console.log("New counter=" + counter);
+    // console.log("Total=" + counter);
     $('#totalScore').text(counter);
 
         if (counter == targetNumber){
